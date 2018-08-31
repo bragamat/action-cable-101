@@ -1,2 +1,14 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
+<%= form_with url: 'messages' do |form| %>
+  <%= form.text_field :message, id: "messageInput", :autocomplete=>"off" %>
+  <%= form.submit %>
+<% end %>
+
+<div id="messages">
+
+  <% @messages.each do |message|%>
+  <div><h2><%= message.message %></h2></div>
+  <% end %>
+  
+</div>
